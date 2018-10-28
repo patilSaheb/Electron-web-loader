@@ -13,7 +13,7 @@ Highlights:
 # Clone this repository
 git clone https://github.com/suraj9793/Electron-web-loader
 # Go into the repository
-cd electron-quick-start
+cd Electron-web-loader
 # Install dependencies
 npm install
 # Run the app
