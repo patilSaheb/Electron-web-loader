@@ -1,4 +1,4 @@
-# electron-chat-loader
+# electron-web-loader
 This is an electron setup to load a sibling web chat app.
 
 Post clone must-do's
