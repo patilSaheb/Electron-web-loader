@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron ."
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/suraj9793/Electron-web-loader",
   "keywords": [
     "Electron",
     "quick",
@@ -16,6 +16,7 @@
   ],
   "author": "suraj9793",
   "devDependencies": {
-    "electron": "^3.0.4"
+    "electron": "^3.0.4",
+    "electron-builder": "^20.29.0"
   }
 }
