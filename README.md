@@ -1,4 +1,4 @@
-# electron-chat-loader
+# electron-web-loader
 This is an electron setup to load a sibling web chat app.
 
 Post clone must-do's
@@ -13,7 +13,7 @@ Highlights:
 # Clone this repository
 git clone https://github.com/suraj9793/Electron-web-loader
 # Go into the repository
-cd electron-quick-start
+cd Electron-web-loader
 # Install dependencies
 npm install
 # Run the app
