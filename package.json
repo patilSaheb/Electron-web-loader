@@ -6,8 +6,8 @@
   "scripts": {
     "start": "electron .",
     "postinstall": "install-app-deps",
-    "pack": "build --dir",
-    "dist": "build"
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "repository": "https://github.com/suraj9793/Electron-web-loader",
   "keywords": [
@@ -21,5 +21,13 @@
   "devDependencies": {
     "electron": "^3.0.4",
     "electron-builder": "^20.29.0"
+  },
+  "build": {
+    "appId": "suraj.p@adwitiya.io.chatter",
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "target": "dmg",
+      "icon": "build/appIcn.icns"
+    }
   }
 }

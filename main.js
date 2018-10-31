@@ -55,10 +55,10 @@ app.on('activate', function () {
 // code. You can also put them in separate files and require them here.
 ipcMain.on('notification', (event, arg) => {
   if (mainWindow.isMinimized() || !mainWindow.isVisible() || !mainWindow.isFocused()) {
-
+    console.log(arg)
   let myNotification = new Notification({
-    title: "You've got a message",
-    body: arg,
+    title: "You've got a message from "+arg.name,
+    body: arg.text,
     hasReply: true,
     silent: false,
     closeButtonText: 'close'
