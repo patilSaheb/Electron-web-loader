@@ -28,6 +28,14 @@
       "category": "public.app-category.developer-tools",
       "target": "dmg",
       "icon": "build/appIcn.icns"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "build/appIcn.png.ico"
+    },
+    "nsis": {
+      "installerIcon": "build/appIcn.png.ico",
+      "uninstallerIcon": "build/appIcn.png.ico"
     }
   }
 }
