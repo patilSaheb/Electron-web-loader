@@ -30,12 +30,17 @@
       "icon": "build/appIcn.icns"
     },
     "win": {
-      "target": ["nsis"],
+      "target": [
+        "nsis"
+      ],
       "icon": "build/appIcn.png.ico"
     },
     "nsis": {
       "installerIcon": "build/appIcn.png.ico",
       "uninstallerIcon": "build/appIcn.png.ico"
     }
+  },
+  "dependencies": {
+    "node-notifier": "^5.3.0"
   }
 }
