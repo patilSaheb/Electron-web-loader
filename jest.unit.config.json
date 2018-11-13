@@ -1,0 +1,27 @@
+{
+  "testMatch": [
+    "*.test.js"
+  ],
+  "verbose": true,
+  "collectCoverage": true,
+  "coverageReporters": [
+    "text",
+    "html"
+  ],
+  "coverageDirectory": "out/coverage",
+  "collectCoverageFrom": [
+    "*.js",
+    "!**/node_modules/**"
+  ],
+  "reporters": [
+    "default",
+    ["./node_modules/jest-html-reporter", {
+      "pageTitle": "Electron Test Result",
+      "includeFailureMsg": true,
+      "includeConsoleLog": true,
+      "theme": "lightTheme",
+      "sort": "status",
+      "outputPath": "./out/Unit Tests Report.html"
+    }]
+  ]
+}
