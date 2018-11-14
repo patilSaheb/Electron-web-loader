@@ -1,8 +1,10 @@
 const electron = require('./__mocks__/electron');
+const sinon = require('sinon');
 
 const mainProcess = electron.ipcMain;
 const protocolWindow = electron.ipcRenderer;
 const notifcationProcess = electron.Notification;
+const mainWindow = electron.mainWindow;
 
 describe('notification handler', function () {
   const data = {
@@ -21,10 +23,10 @@ describe('notification handler', function () {
 
   it('should call notification on upon being called', (done) => {
     const spy = jest.spyOn(mainProcess, 'on');
-    
+
     mainProcess.on('notification', mockCallback);
     expect(spy).toHaveBeenCalled();
-    
+
     done();
   });
 
@@ -41,6 +43,14 @@ describe('notification handler', function () {
     expect(spy).toHaveBeenCalled();
     done();
   });
+
+  it('send reply option to renderer', () => {
+    const sendReply = sinon.spy(mainWindow.webContents, 'send');
+    notifcationProcess.on('reply', ()=>{});
+    
+    sendReply.restore();
+    sinon.assert.calledOnce(sendReply);
+  })
 });
 
 

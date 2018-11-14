@@ -1,6 +1,6 @@
 {
   "testMatch": [
-    "*.test.js"
+    "<rootDir>/*.test.js"
   ],
   "verbose": true,
   "collectCoverage": true,

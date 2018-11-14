@@ -14,6 +14,7 @@ const app = {
 // nodes' EventEmitter
 const ipcMain = {
     on: function(event, cb) {
+
         ipcEmitter.on(event, cb);
     },
     send: function (event, args) {
@@ -59,11 +60,17 @@ const ipcRenderer = {
 
 //notification mock
 const notification = {
-    show: jest.fn(),
-    on: function(eventName, cb) {
-        ipcEmitter.on(eventName, cb);
-    }
+    show: jest.fn(),//display notification
+    on: function (eventName, args) {
+        mainWindow.webContents.send(eventName, args);
+      }
 };
+
+const mainWindow = {
+    webContents: {
+        send: jest.fn()
+    }
+}
 
 module.exports = {
   require: jest.fn(),
@@ -71,6 +78,7 @@ module.exports = {
   app: jest.fn(),
   ipcMain: ipcMain,
   ipcRenderer: ipcRenderer,
+  mainWindow: mainWindow,
   remote: jest.fn(),
   dialog: jest.fn(),
   Notification: notification

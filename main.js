@@ -96,7 +96,7 @@ ipcMain.on('notification', (event, arg) => {
         message: hasReply,
       };
 
-      mainWindow.webContents.send('direct-reply', data);
+      mainWindow.webContents.send('reply', data);
     });
 
   }
