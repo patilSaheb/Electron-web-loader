@@ -8,8 +8,10 @@ describe('Application launch', function () {
         this.app = new Application({
             path: electronPath,
             args: ['.'],
-            waitTimeout: 10000
-        })        
+            quitTimeout: 10000,
+            waitTimeout: 10000,
+            startTimeout: 10000
+        })
         return this.app.start()
     })
 
@@ -17,12 +19,18 @@ describe('Application launch', function () {
         if (this.app && this.app.isRunning()) {
             return this.app.stop()
         }
-        return undefined
     })
 
     it('shows an initial window', function () {
         return this.app.client.getWindowCount().then(function (count) {
-          assert.equal(count, 1)
+            assert.equal(count, 1)
         })
+    })
+
+    it('find an empty input', function () {
+        return this.app.client.getValue('input').then(function (value) {
+            console.log(value); // outputs: some value
+            assert.equal(value, '')
+        });
     })
 })
