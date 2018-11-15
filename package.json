@@ -6,6 +6,7 @@
   "scripts": {
     "start": "electron .",
     "test": "jest --config jest.config.json",
+    "integration-test": "mocha integrate-test.js",
     "postinstall": "install-app-deps",
     "pack": "electron-builder --dir",
     "dist": "electron-builder"
@@ -24,6 +25,8 @@
     "babel-preset-env": "^1.7.0",
     "electron": "^3.0.4",
     "electron-builder": "^20.29.0",
+    "mocha": "^5.2.0",
+    "spectron": "^5.0.0",
     "supertest": "^3.3.0"
   },
   "build": {
