@@ -19,6 +19,7 @@ function createWindow() {
 
   // and load the index.html of the app.
   mainWindow.loadURL('https://react-web-chat.herokuapp.com/')
+  mainWindow.loadURL('http://localhost:3000')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -96,7 +97,7 @@ ipcMain.on('notification', (event, arg) => {
         message: hasReply,
       };
 
-      mainWindow.webContents.send('reply', data);
+      mainWindow.webContents.send('direct-reply', data);
     });
 
   }
